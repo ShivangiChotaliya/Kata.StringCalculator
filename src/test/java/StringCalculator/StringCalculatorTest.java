@@ -94,5 +94,16 @@ public class StringCalculatorTest {
            Assert.assertEquals(1+2+3, StringCalculator.add("1,2\n,3\n"));
     }
   
+    // allow different delimiters
+    @Test
+    public final void allowDiffrentDelimiter() {
+           Assert.assertEquals(1+2+3, StringCalculator.add("1;2\n;3;"));
+    }
+
+    // allow delimiter like ;
+     @Test
+    public final void allowDiffrentDelimiterTwo() {
+           Assert.assertEquals(1+2+3, StringCalculator.add("1;2\n;3;"));
+    }
 
 }

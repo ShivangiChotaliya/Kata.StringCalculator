@@ -20,4 +20,11 @@ public class StringCalculatorTest {
             Assert.assertEquals(0, StringCalculator.add(""));
     }  
 	 
+ 	// one number
+	@Test
+	public final void oneNumberReturnNumber() {
+	         Assert.assertEquals(5, StringCalculator.add("5"));
+	}
+	 
+ 
 }

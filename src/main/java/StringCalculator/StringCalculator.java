@@ -45,11 +45,17 @@ public class StringCalculator {
     }
 	
 	public static int add(String numbers) { 
+        int result = 0;
         String[] numArray = numbers.split(",");
-        return 0; // return 0 for empty string
-    }
-	
-	
-	
-	
+        
+            for (String number : numArray) {   
+                if (!number.isEmpty()) {
+                    Integer.parseInt(number);
+                    result = result + Integer.parseInt(number);
+                }
+            
+         }
+        return result; 
+    }    
+    
 }

@@ -66,8 +66,9 @@ public class StringCalculator {
 	                if (onlyNumber < 0) {
 	                    negativeNumbers.add(onlyNumber);
 
-	                }
-	                result = result + Integer.parseInt(number);
+	                }             
+	                if(onlyNumber <= 1000)
+                        result = result + onlyNumber;
 	            }
 	        }
 	        if (negativeNumbers.size() > 0) {

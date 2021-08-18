@@ -135,4 +135,11 @@ public class StringCalculatorTest {
  		Assert.assertNotNull(exception);
  		Assert.assertEquals("Negatives not allowed: [-45, -20]", exception.getMessage());
  	}
+ 	
+ 	 // number which is greater than 1000 is ignored 
+ 	 @Test
+     public final void numbersGreaterThan1000IsUsedThenItIsNotIncludedInSum() {
+             Assert.assertEquals(4+1000+5, StringCalculator.add("4,1200,1000,5,2333"));
+     }
+ 	 
 }

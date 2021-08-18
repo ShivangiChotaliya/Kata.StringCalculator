@@ -101,25 +101,25 @@ public class StringCalculatorTest {
     }
 
     // allow delimiter like ;
-     @Test
+    @Test
     public final void allowDiffrentDelimiterTwo() {
            Assert.assertEquals(1+2+3, StringCalculator.add("1;2\n;3;"));
     }
 
      //  allow different delimiters to when String starts with //
-     @Test
-     public final void allowDiffrentDelimiterTwoWithDoubleSlash() {
+    @Test
+    public final void allowDiffrentDelimiterTwoWithDoubleSlash() {
             Assert.assertEquals(2, StringCalculator.add("//;\n;2"));
-     }
+    }
 
  
-     @Test
-     public final void allowDiffrentDelimiterTwoWithDoubleSlashTwo() {
-            Assert.assertEquals(150, StringCalculator.add("//;\n50;50;50"));
-     }
+	@Test
+	public final void allowDiffrentDelimiterTwoWithDoubleSlashTwo() {
+	        Assert.assertEquals(150, StringCalculator.add("//;\n50;50;50"));
+	}
      
      // 5th problem   
-     @Test(expected = RuntimeException.class)
+    @Test(expected = RuntimeException.class)
  	public final void negativeNumberNotAllowSoExceptionIsThrown() {
  		StringCalculator.add("10,-2");
  	}
@@ -137,54 +137,54 @@ public class StringCalculatorTest {
  	}
  	
  	 // number which is greater than 1000 is ignored 
- 	 @Test
-     public final void numbersGreaterThan1000IsUsedThenItIsNotIncludedInSum() {
+ 	@Test
+    public final void numbersGreaterThan1000IsUsedThenItIsNotIncludedInSum() {
              Assert.assertEquals(4+1000+5, StringCalculator.add("4,1200,1000,5,2333"));
-     }
+    }
  	 
- 	 @Test
-     public final void numbersGreaterThan1000IsUsedThenItIsNotIncludedInSumExTwo() {
+ 	@Test
+    public final void numbersGreaterThan1000IsUsedThenItIsNotIncludedInSumExTwo() {
              Assert.assertEquals(0, StringCalculator.add("1200,"));
-     }
+    }
  	 
  	// allow delimiter with format: “//[delimiter]\n”
      //  for example: “//[***]\n1***2***3”    
-     @Test
-     public final void delimiterExample() {
+    @Test
+    public final void delimiterExample() {
              Assert.assertEquals(1+2+3, StringCalculator.add("//[***]\n1***2***3"));
-     }
+    }
 
 
-     @Test
-     public final void delimiterExampleOne() {
+    @Test
+    public final void delimiterExampleOne() {
              Assert.assertEquals(4+20+6, StringCalculator.add("//**;[***]\n4,***20**6"));
-     }
+    }
 
    //Allow multiple delimiters like this: “//[delim1][delim2]\n”
      @Test
-     public final void delimiteWithPercentageAddedExampleOne() {
+    public final void delimiteWithPercentageAddedExampleOne() {
              Assert.assertEquals(1+2+3, StringCalculator.add("//[*][%]\n1*2%3"));
-     }
+    }
 
      @Test
-     public final void delimiterWithPercentageAddedExampleTwo() {
+    public final void delimiterWithPercentageAddedExampleTwo() {
              Assert.assertEquals(1+2+3, StringCalculator.add("//[*][***][*][%][%][%][%]\n1*2%3"));
-     }
+    }
      
      // handle multiple delimiters with length longer than one char
-     @Test
-     public final void handleMultipleCharacterWithLengthLongExampleOne() {
+    @Test
+    public final void handleMultipleCharacterWithLengthLongExampleOne() {
              Assert.assertEquals(1+2+3, StringCalculator.add("//[**][%%]\n1**2%%3 "));
-     }
+    }
 
 
-     @Test
-     public final void handleMultipleCharacterWithLengthLongEXampleTwo() {
+    @Test
+    public final void handleMultipleCharacterWithLengthLongEXampleTwo() {
              Assert.assertEquals(1+2+3, StringCalculator.add("//;;;[,,,][**]\n1**2%%3 "));
-     }
+    }
      
-     @Test
-     public final void handleMultipleCharacterWithLengthLongEXampleThree() {
+    @Test
+    public final void handleMultipleCharacterWithLengthLongEXampleThree() {
              Assert.assertEquals(1+2+3, StringCalculator.add("//\n\n\n[,,,*][];;[%%%];;;;[**]\n1**2%%3 "));
-     }
+    }
 }

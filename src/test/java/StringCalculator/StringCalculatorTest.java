@@ -142,4 +142,10 @@ public class StringCalculatorTest {
              Assert.assertEquals(4+1000+5, StringCalculator.add("4,1200,1000,5,2333"));
      }
  	 
+ 	 @Test
+     public final void numbersGreaterThan1000IsUsedThenItIsNotIncludedInSumExTwo() {
+             Assert.assertEquals(0, StringCalculator.add("1200,"));
+     }
+ 	 
+ 	 
 }

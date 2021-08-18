@@ -147,5 +147,17 @@ public class StringCalculatorTest {
              Assert.assertEquals(0, StringCalculator.add("1200,"));
      }
  	 
- 	 
+ 	// allow delimiter with format: “//[delimiter]\n”
+     //  for example: “//[***]\n1***2***3”    
+     @Test
+     public final void delimiterExample() {
+             Assert.assertEquals(1+2+3, StringCalculator.add("//[***]\n1***2***3"));
+     }
+
+
+     @Test
+     public final void delimiterExampleOne() {
+             Assert.assertEquals(4+20+6, StringCalculator.add("//**;[***]\n4,***20**6"));
+     }
+
 }

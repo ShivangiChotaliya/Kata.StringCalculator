@@ -51,9 +51,20 @@ public class StringCalculator {
 		int result = 0;
 
 	    List<Integer> negativeNumbers = new ArrayList<Integer>();
+	    
 	    if(numbers.startsWith("//")){
 	        String numbersWithoutSlash = numbers.substring(2);
 	        numbers = numbersWithoutSlash;
+	        
+	        if(numbers.contains("*") || numbers.contains("[") || numbers.contains("]"))
+            {
+
+            //  numbers = numbers.replace('*',',').replace('[',',').replace(']',',');
+            //  or    
+                numbers = numbers.replace('*','\n').replace('[','\n').replace(']','\n');
+            }
+	    
+	    
 	    }
 
 	    

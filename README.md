@@ -27,18 +27,7 @@ JUnit: A Java TDD unit test framework.
 
 Dependency of JUnit
 ===================
-Download : https://mvnrepository.com/artifact/junit/junit/4.0  
-
- <dependencies>
-<dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>4.0</version>
-    <scope>test</scope>
-</dependency>
-</dependencies>
-
-
+Download :  https://mvnrepository.com/artifact/junit/junit/4.0  
 
 Jar of JUnit 
 ==================

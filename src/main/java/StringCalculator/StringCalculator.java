@@ -50,7 +50,6 @@ public class StringCalculator {
 	public static int add(String numbers) { 
         
 		int result = 0;
-
 	    List<Integer> negativeNumbers = new ArrayList<Integer>();
 	    
 	    if(numbers.startsWith("//")){
@@ -59,16 +58,11 @@ public class StringCalculator {
 	        
 	        if(numbers.contains("*") || numbers.contains("[") || numbers.contains("]")  || numbers.contains("%"))
             {
-
-	        // we can use , instead of \n 	
-          
+	        	// we can use , instead of \n 	
                 numbers = numbers.replace('*','\n').replace('[','\n').replace(']','\n').replaceAll("%" , "\n");
             }
-	    
-	    
 	    }
 
-	    
 	    String[] numArray = numbers.split(",|\n|;"); 
 	        for (String number : numArray) {
 	            number = number.trim();
@@ -86,7 +80,8 @@ public class StringCalculator {
 	        if (negativeNumbers.size() > 0) {
 	                throw new RuntimeException("Negatives not allowed: " + negativeNumbers.toString());
 	        }
-	    return result; 
+	        
+	        return result; 
 		} 
 	}  
 	

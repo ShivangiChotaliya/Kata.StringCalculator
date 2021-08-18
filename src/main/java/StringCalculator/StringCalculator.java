@@ -48,7 +48,8 @@ public class StringCalculator {
         int result = 0;
         String[] numArray = numbers.split(",");
        
-        for (String number : numArray) {   
+        for (String number : numArray) { 
+        	number = number.trim();
             if (!number.isEmpty()) {
                 Integer.parseInt(number);
                 result = result + Integer.parseInt(number);

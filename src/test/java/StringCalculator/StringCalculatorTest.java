@@ -52,7 +52,7 @@ public class StringCalculatorTest {
         Assert.assertEquals(1+2+2,StringCalculator.add("1,2,2"));
     }
     
- // add more than 2 numbers  
+    // add more than 2 numbers  
     @Test
     public final void moreThanTwoNumbers() {
         StringCalculator.add("0,99,18");
@@ -64,11 +64,15 @@ public class StringCalculatorTest {
         StringCalculator.add("2,88,A");
     }
 
-
-
     // allow  unknown amount of numbers
     @Test
        public final void anyNumbers() {
            Assert.assertEquals(7+35+50+6+81+90, StringCalculator.add("7,35,50,6,81,90"));
+    }
+    
+    // allow  space before and after number
+    @Test
+       public final void allowSpaceBeforeAndAfterNumber() {
+           Assert.assertEquals(7+35, StringCalculator.add(" 7,35"));
     }
 }

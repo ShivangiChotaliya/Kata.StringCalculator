@@ -47,15 +47,16 @@ public class StringCalculator {
 	public static int add(String numbers) { 
         int result = 0;
         String[] numArray = numbers.split(",");
-        
-            for (String number : numArray) {   
-                if (!number.isEmpty()) {
-                    Integer.parseInt(number);
-                    result = result + Integer.parseInt(number);
-                }
-            
+        if (numArray.length > 2) {
+            throw new RuntimeException("Allow only 2 numbers");
+        }
+        for (String number : numArray) {   
+            if (!number.isEmpty()) {
+                Integer.parseInt(number);
+                result = result + Integer.parseInt(number);
+            }    
          }
         return result; 
-    }    
-    
+    }  
+	
 }

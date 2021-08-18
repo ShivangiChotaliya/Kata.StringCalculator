@@ -60,7 +60,7 @@ public class StringCalculator {
 	        if(numbers.contains("*") || numbers.contains("[") || numbers.contains("]")  || numbers.contains("%"))
             {
 
-	        // we can use , instead of \n  example is blello	
+	        // we can use , instead of \n 	
           
                 numbers = numbers.replace('*','\n').replace('[','\n').replace(']','\n').replaceAll("%" , "\n");
             }

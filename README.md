@@ -24,7 +24,23 @@ Tool
 ========
 JUnit: A Java TDD unit test framework.
 
-Jar files of JUnit
+
+Dependency of JUnit
+===================
+Download : https://mvnrepository.com/artifact/junit/junit/4.0  
+
+ <dependencies>
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.0</version>
+    <scope>test</scope>
+</dependency>
+</dependencies>
+
+
+
+Jar of JUnit 
 ==================
 hamcrest,
 junit

@@ -160,4 +160,31 @@ public class StringCalculatorTest {
              Assert.assertEquals(4+20+6, StringCalculator.add("//**;[***]\n4,***20**6"));
      }
 
+   //Allow multiple delimiters like this: “//[delim1][delim2]\n”
+     @Test
+     public final void delimiteWithPercentageAddedExampleOne() {
+             Assert.assertEquals(1+2+3, StringCalculator.add("//[*][%]\n1*2%3"));
+     }
+
+     @Test
+     public final void delimiterWithPercentageAddedExampleTwo() {
+             Assert.assertEquals(1+2+3, StringCalculator.add("//[*][***][*][%][%][%][%]\n1*2%3"));
+     }
+     
+     // handle multiple delimiters with length longer than one char
+     @Test
+     public final void handleMultipleCharacterWithLengthLongExampleOne() {
+             Assert.assertEquals(1+2+3, StringCalculator.add("//[**][%%]\n1**2%%3 "));
+     }
+
+
+     @Test
+     public final void handleMultipleCharacterWithLengthLongEXampleTwo() {
+             Assert.assertEquals(1+2+3, StringCalculator.add("//;;;[,,,][**]\n1**2%%3 "));
+     }
+     
+     @Test
+     public final void handleMultipleCharacterWithLengthLongEXampleThree() {
+             Assert.assertEquals(1+2+3, StringCalculator.add("//\n\n\n[,,,*][];;[%%%];;;;[**]\n1**2%%3 "));
+     }
 }

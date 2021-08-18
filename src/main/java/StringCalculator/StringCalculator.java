@@ -56,12 +56,12 @@ public class StringCalculator {
 	        String numbersWithoutSlash = numbers.substring(2);
 	        numbers = numbersWithoutSlash;
 	        
-	        if(numbers.contains("*") || numbers.contains("[") || numbers.contains("]"))
+	        if(numbers.contains("*") || numbers.contains("[") || numbers.contains("]")  || numbers.contains("%"))
             {
 
-            //  numbers = numbers.replace('*',',').replace('[',',').replace(']',',');
-            //  or    
-                numbers = numbers.replace('*','\n').replace('[','\n').replace(']','\n');
+	        // we can use , instead of \n  example is blello	
+          
+                numbers = numbers.replace('*','\n').replace('[','\n').replace(']','\n').replaceAll("%" , "\n");
             }
 	    
 	    

@@ -46,7 +46,7 @@ public class StringCalculator {
 	
 	public static int add(String numbers) { 
         int result = 0;
-        String[] numArray = numbers.split(",");
+        String[] numArray = numbers.split(",|\n");
        
         for (String number : numArray) { 
         	number = number.trim();

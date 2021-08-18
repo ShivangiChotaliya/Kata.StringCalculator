@@ -75,4 +75,24 @@ public class StringCalculatorTest {
        public final void allowSpaceBeforeAndAfterNumber() {
            Assert.assertEquals(7+35, StringCalculator.add(" 7,35"));
     }
+    
+    // allow newline insted of comma
+    @Test
+    public final void allowNewLine() {
+           Assert.assertEquals(1+2+3, StringCalculator.add("1\n2,3"));
+    }
+
+    // allow newline   
+    @Test
+    public final void allowNewLineExTwo() {
+           Assert.assertEquals(1+2+3, StringCalculator.add("1,2\n,3"));
+    }
+
+    // allow newline   
+    @Test
+    public final void allowNewLineExThree() {
+           Assert.assertEquals(1+2+3, StringCalculator.add("1,2\n,3\n"));
+    }
+  
+
 }

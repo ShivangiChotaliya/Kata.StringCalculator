@@ -46,9 +46,29 @@ public class StringCalculatorTest {
         Assert.assertEquals(8+20,StringCalculator.add("8,20"));
     }
     
-    // if more then two numbers then expected error
-    @Test(expected = RuntimeException.class)
+    // Add numbers
+    @Test
     public final void threeNumbersReturnSum() {
         Assert.assertEquals(1+2+2,StringCalculator.add("1,2,2"));
+    }
+    
+ // add more than 2 numbers  
+    @Test
+    public final void moreThanTwoNumbers() {
+        StringCalculator.add("0,99,18");
+    }
+
+    // add alaphabets with two numbers throws error
+    @Test(expected = RuntimeException.class)
+    public final void moreThanTwoNumbersAndOneNonNumber() {
+        StringCalculator.add("2,88,A");
+    }
+
+
+
+    // allow  unknown amount of numbers
+    @Test
+       public final void anyNumbers() {
+           Assert.assertEquals(7+35+50+6+81+90, StringCalculator.add("7,35,50,6,81,90"));
     }
 }

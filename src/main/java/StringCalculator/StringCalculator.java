@@ -37,6 +37,8 @@ if there are multiple negatives, show all of them in the exception message.
 ———————————————————————————————— 
  */
 package StringCalculator;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StringCalculator {
 
@@ -46,22 +48,33 @@ public class StringCalculator {
 	
 	public static int add(String numbers) { 
         
-		if(numbers.startsWith("//")){
-            String numbersWithoutSlash = numbers.substring(2);
-            numbers = numbersWithoutSlash;
-        }
-		
 		int result = 0;
-        String[] numArray = numbers.split(",|\n|;");
-       
-        for (String number : numArray) { 
-        	number = number.trim();
-            if (!number.isEmpty()) {
-                Integer.parseInt(number);
-                result = result + Integer.parseInt(number);
-            }    
-         }
-        return result; 
-    }  
+
+	    List<Integer> negativeNumbers = new ArrayList<Integer>();
+	    if(numbers.startsWith("//")){
+	        String numbersWithoutSlash = numbers.substring(2);
+	        numbers = numbersWithoutSlash;
+	    }
+
+	    
+	    String[] numArray = numbers.split(",|\n|;"); 
+	        for (String number : numArray) {
+	            number = number.trim();
+	            number = number.trim();  // trim numbers to allow space 
+	            if (!number.isEmpty()) {
+	                int onlyNumber = Integer.parseInt(number.trim());
+	                if (onlyNumber < 0) {
+	                    negativeNumbers.add(onlyNumber);
+
+	                }
+	                result = result + Integer.parseInt(number);
+	            }
+	        }
+	        if (negativeNumbers.size() > 0) {
+	                throw new RuntimeException("Negatives not allowed: " + negativeNumbers.toString());
+	        }
+	    return result; 
+		} 
+	}  
 	
-}
+

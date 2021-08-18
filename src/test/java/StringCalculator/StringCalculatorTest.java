@@ -117,4 +117,22 @@ public class StringCalculatorTest {
      public final void allowDiffrentDelimiterTwoWithDoubleSlashTwo() {
             Assert.assertEquals(150, StringCalculator.add("//;\n50;50;50"));
      }
+     
+     // 5th problem   
+     @Test(expected = RuntimeException.class)
+ 	public final void negativeNumberNotAllowSoExceptionIsThrown() {
+ 		StringCalculator.add("10,-2");
+ 	}
+
+ 	@Test
+ 	public final void negativeNumberNotAllowSoExceptionIsThrownExampleTwo(){
+ 		RuntimeException exception = null;
+ 		try {
+ 			StringCalculator.add("75,-45,19,-20,0,5");
+ 		} catch (RuntimeException e) {
+ 			exception = e;
+ 		}
+ 		Assert.assertNotNull(exception);
+ 		Assert.assertEquals("Negatives not allowed: [-45, -20]", exception.getMessage());
+ 	}
 }

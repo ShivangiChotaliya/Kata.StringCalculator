@@ -1,3 +1,4 @@
+
 package StringCalculator;
 
 import static org.junit.Assert.*;
@@ -12,9 +13,11 @@ public class StringCalculatorTest {
 		//fail("Not yet implemented");
 	}
 
-	@Test
+	//  when string is empty, return 0  
+ 	@Test
     public final void emptyStringReturnZero() {
-        // for empty String retun 0
+        // for empty String return 0
             Assert.assertEquals(0, StringCalculator.add(""));
     }  
+	 
 }

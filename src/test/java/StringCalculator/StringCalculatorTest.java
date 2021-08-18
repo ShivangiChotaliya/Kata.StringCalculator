@@ -106,4 +106,15 @@ public class StringCalculatorTest {
            Assert.assertEquals(1+2+3, StringCalculator.add("1;2\n;3;"));
     }
 
+     //  allow different delimiters to when String starts with //
+     @Test
+     public final void allowDiffrentDelimiterTwoWithDoubleSlash() {
+            Assert.assertEquals(2, StringCalculator.add("//;\n;2"));
+     }
+
+ 
+     @Test
+     public final void allowDiffrentDelimiterTwoWithDoubleSlashTwo() {
+            Assert.assertEquals(150, StringCalculator.add("//;\n50;50;50"));
+     }
 }

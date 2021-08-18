@@ -45,7 +45,13 @@ public class StringCalculator {
     }
 	
 	public static int add(String numbers) { 
-        int result = 0;
+        
+		if(numbers.startsWith("//")){
+            String numbersWithoutSlash = numbers.substring(2);
+            numbers = numbersWithoutSlash;
+        }
+		
+		int result = 0;
         String[] numArray = numbers.split(",|\n|;");
        
         for (String number : numArray) { 
